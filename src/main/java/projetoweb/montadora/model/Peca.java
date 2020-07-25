@@ -1,5 +1,8 @@
 package projetoweb.montadora.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,9 +23,11 @@ public class Peca {
     Integer fabricacao;
     double valor;
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "motor_referencia")
     Motor motor;
     @ManyToMany
+    @JsonIgnore
     @JoinTable(
             name = "peca_referencia_moto", joinColumns = @JoinColumn(name = "peca_referencia",
             referencedColumnName = "id_peca"), inverseJoinColumns = @JoinColumn(name = "peca_moto_modelo")

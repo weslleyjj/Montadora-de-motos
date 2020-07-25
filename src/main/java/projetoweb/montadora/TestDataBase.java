@@ -92,6 +92,38 @@ public class TestDataBase implements ApplicationRunner {
 
         //----------------------
 
+        /*
+        Motor m1 = new Motor();
+        m1.setCilindrada(150);
+        m1.setPotencia("14cv");
+        m1.setTipo("DOHC");
+        Peca p1 = new Peca();
+        p1.setMotor(m1);
+        p1.setNome("junta cabeçote");
+        p1.setCategoria("borracha");
+        Peca p2 = new Peca();
+        p2.setMotor(m1);
+        p2.setNome("parafuso cabeçote");
+        p2.setCategoria("parafuso");
+        List<Peca> lista = new ArrayList<>();
+        List<Moto> listamoto = new ArrayList<>();
+        Moto n2 = new Moto();
+        n2.setMotor(m1);
+        listamoto.add(n2);
+        p1.setMoto(listamoto);
+        p2.setMoto(listamoto);
+        lista.add(p1);
+        lista.add(p2);
+
+        m1.setPeca(lista);
+
+
+
+        motorRepository.save(m1);
+        motoRepository.save(n2);
+        pecaRepository.save(p1);
+        pecaRepository.save(p2);
+        */
     }
 }
 
@@ -108,4 +140,5 @@ public class MontadoraApplication {
         SpringApplication.run(MontadoraApplication.class, args);
     }
 
-}*/
+}
+*/
