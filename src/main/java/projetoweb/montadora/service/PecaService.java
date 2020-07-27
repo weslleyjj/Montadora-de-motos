@@ -6,6 +6,7 @@ import projetoweb.montadora.model.Peca;
 import projetoweb.montadora.repository.PecaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PecaService {
@@ -25,6 +26,10 @@ public class PecaService {
     }
     public Peca getOne(Long id){
         return pecaRepository.findById(id).orElse(null);
+    }
+    public Peca SaveAndFlush(Peca p){return pecaRepository.saveAndFlush(p);}
+    public Optional<Peca> findById(Long id){
+        return pecaRepository.findById(id);
     }
     public List<Peca> getAll(){
         return pecaRepository.findAll();

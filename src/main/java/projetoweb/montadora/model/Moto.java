@@ -20,7 +20,7 @@ public class Moto {
     Long id_moto;
     String modelo;
     Integer ano;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "motor_referencia")
     Motor motor;
     @OneToOne
