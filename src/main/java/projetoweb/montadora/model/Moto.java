@@ -19,13 +19,11 @@ public class Moto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id_moto;
     String modelo;
-    String cor;
     Integer ano;
-    double valor;
-    @OneToOne
-    //@JsonIgnore
-    @JoinColumn(name = "moto_motor")
+    @ManyToOne
+    @JoinColumn(name = "motor_referencia")
     Motor motor;
-    @OneToMany(mappedBy = "id_peca")
-    List<Peca> peca;
+    @OneToOne
+    @JoinColumn(name = "registro")
+    Registro registro;
 }

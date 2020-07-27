@@ -24,7 +24,7 @@ public class PecaService {
         pecaRepository.delete(p);
     }
     public Peca getOne(Long id){
-        return pecaRepository.getOne(id);
+        return pecaRepository.findById(id).orElse(null);
     }
     public List<Peca> getAll(){
         return pecaRepository.findAll();

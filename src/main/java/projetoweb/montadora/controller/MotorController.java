@@ -1,5 +1,6 @@
 package projetoweb.montadora.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoweb.montadora.model.Motor;
 import projetoweb.montadora.service.MotorService;
@@ -20,7 +21,7 @@ public class MotorController {
         return service.getAll();
     }
 
-    @GetMapping(path = {"/id"})
+    @GetMapping(path = {"/{id}"})
     public Motor getOne(@PathVariable Long id){
         return service.getOne(id);
     }
@@ -28,5 +29,26 @@ public class MotorController {
     @PostMapping
     public Motor insert(@RequestBody Motor m) {
         return service.insert(m);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Motor> update(@PathVariable Long id, @RequestBody Motor m){
+        if(service.getOne(id) == null){
+            return ResponseEntity.notFound().build();
+        }else{
+            service.update(m);
+            Motor updated = service.getOne(id);
+            return ResponseEntity.ok().body(updated);
+        }
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        return service
+                .findById(id)
+                .map(record -> {
+                    service.delete(record);
+                    return ResponseEntity.status(202).build();
+                }).orElse(ResponseEntity.notFound().build());
     }
 }

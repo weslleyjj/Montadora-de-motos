@@ -19,11 +19,9 @@ public class Motor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id_motor;
-    String potencia;
-    String tipo;
-    Integer cilindrada;
+    String cilindrada;
     Integer fabricacao;
-    @OneToMany(mappedBy = "id_peca")
-    List<Peca> peca;
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "motor")
+    List<Moto>  moto;
 
 }

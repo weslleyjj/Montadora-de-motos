@@ -6,6 +6,7 @@ import projetoweb.montadora.model.Moto;
 import projetoweb.montadora.repository.MotoRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MotoService {
@@ -23,7 +24,14 @@ public class MotoService {
         motoRepository.delete(m);
     }
     public Moto getOne(Long id){
-        return motoRepository.getOne(id);
+        return motoRepository.findById(id).orElse(null);
+    }
+    public Moto SaveAndFlush(Moto m){
+        return motoRepository.saveAndFlush(m);
+    }
+
+    public Optional<Moto> findById(Long id){
+        return motoRepository.findById(id);
     }
     public List<Moto> getAll(){
         return motoRepository.findAll();

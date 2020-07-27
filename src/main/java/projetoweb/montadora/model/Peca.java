@@ -19,19 +19,12 @@ public class Peca {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id_peca;
     String nome;
-    String Categoria;
-    Integer fabricacao;
-    double valor;
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "motor_referencia")
-    Motor motor;
-    @ManyToMany
-    @JsonIgnore
+    String tipo;
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "peca_referencia_moto", joinColumns = @JoinColumn(name = "peca_referencia",
-            referencedColumnName = "id_peca"), inverseJoinColumns = @JoinColumn(name = "peca_moto_modelo")
+            name = "Peca_Motor", joinColumns = @JoinColumn(name = "Peca_id", referencedColumnName = "id_Peca"),
+            inverseJoinColumns = @JoinColumn(name = "Motor_id")
     )
-    List<Moto> moto;
+    List<Motor> motor;
 
 }
