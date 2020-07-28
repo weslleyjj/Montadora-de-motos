@@ -20,10 +20,10 @@ public class Moto {
     Long id_moto;
     String modelo;
     Integer ano;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "motor_referencia")
+    @ManyToOne//(cascade = CascadeType.ALL)
+    @JoinColumn(name = "motor_id")
     Motor motor;
-    @OneToOne
-    @JoinColumn(name = "registro")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "registro_id")
     Registro registro;
 }

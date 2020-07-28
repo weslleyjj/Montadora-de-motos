@@ -20,7 +20,7 @@ public class Registro {
     Long lote;
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long numSerie;
-    @OneToOne(mappedBy = "registro",cascade = CascadeType.ALL, orphanRemoval = true)
-    Moto moto;
+    //@OneToOne(mappedBy = "registro",cascade = CascadeType.ALL, orphanRemoval = true)
+    //Moto moto;
 
 }

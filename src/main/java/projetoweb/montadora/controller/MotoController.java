@@ -3,9 +3,7 @@ package projetoweb.montadora.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoweb.montadora.model.Moto;
-import projetoweb.montadora.model.Motor;
 import projetoweb.montadora.service.MotoService;
-import projetoweb.montadora.service.MotorService;
 
 import java.util.List;
 
