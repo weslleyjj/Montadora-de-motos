@@ -1,4 +1,4 @@
-package projetoweb.montadora;
+/*package projetoweb.montadora;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -57,7 +57,7 @@ public class TestDataBase implements ApplicationRunner {
         motorRepository.save(m1);
         registroRepository.save(r1);
         motoRepository.save(mo1);
-        pecaRepository.save(p1);*/
+        pecaRepository.save(p1);*//*
         //-------------
         Moto mo1 = new Moto();
         Registro r1 = new Registro();
@@ -99,3 +99,4 @@ public class TestDataBase implements ApplicationRunner {
         //motoRepository.save(mo1);
     }
 }
+*/

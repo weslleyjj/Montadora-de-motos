@@ -1,5 +1,5 @@
 import * as React from "react";
-import {List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Create} from 'react-admin';
+import {NumberInput, SimpleFormIterator, List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Create, ArrayInput} from 'react-admin';
 
 export const PecaList = props => (
     <List {...props}>
@@ -7,6 +7,7 @@ export const PecaList = props => (
             <TextField source="id" />
             <TextField source="nome" />
             <TextField source="tipo" />
+            <TextField source="motor" />
             <EditButton/>
         </Datagrid>
     </List>
@@ -18,6 +19,11 @@ export const PecaEdit = props => (
             <TextInput disabled source="id" />
             <TextInput source="nome" />
             <TextInput source="tipo" />
+            <ArrayInput source="motor">
+                <SimpleFormIterator>
+                    <NumberInput source="id" />
+                </SimpleFormIterator>
+            </ArrayInput>
         </SimpleForm>
     </Edit>
 );
