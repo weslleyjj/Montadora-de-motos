@@ -95,5 +95,7 @@ public class TestDataBase implements ApplicationRunner {
         listamotor.add(m2);
         pec2.setMotor(listamotor);
         pecaRepository.save(pec2);
+        //mo1.setMotor(m1);
+        //motoRepository.save(mo1);
     }
 }

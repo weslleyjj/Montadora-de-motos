@@ -4,6 +4,8 @@ import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoweb.montadora.model.Moto;
+import projetoweb.montadora.model.Motor;
+import projetoweb.montadora.model.Registro;
 import projetoweb.montadora.service.MotoService;
 
 import java.util.List;
@@ -30,6 +32,8 @@ public class MotoController {
 
     @PostMapping
     public Moto insert(@RequestBody Moto m) {
+        Registro r1 = new Registro();
+        m.setRegistro(r1);
         return service.insert(m);
     }
 
