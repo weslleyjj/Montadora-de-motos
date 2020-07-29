@@ -1,5 +1,6 @@
 package projetoweb.montadora.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoweb.montadora.model.Motor;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/motor")
+@CrossOrigin(origins = "http://localhost:3000", exposedHeaders = "X-Total-Count")
 public class MotorController {
     private MotorService service;
 

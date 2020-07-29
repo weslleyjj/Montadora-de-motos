@@ -1,5 +1,6 @@
 package projetoweb.montadora.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/peca")
+@CrossOrigin(origins = "http://localhost:3000", exposedHeaders = "X-Total-Count")
 public class PecaController {
     private PecaService service;
 

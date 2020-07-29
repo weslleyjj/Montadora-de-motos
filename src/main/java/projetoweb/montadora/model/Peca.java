@@ -20,7 +20,7 @@ public class Peca {
     Long id_peca;
     String nome;
     String tipo;
-    @ManyToMany//(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "peca_motor", joinColumns = @JoinColumn(name = "peca_id", referencedColumnName = "id_peca"),
             inverseJoinColumns = @JoinColumn(name = "motor_id")
