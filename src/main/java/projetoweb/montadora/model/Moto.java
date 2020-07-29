@@ -17,7 +17,7 @@ import java.util.List;
 public class Moto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_moto;
+    Long id;
     String modelo;
     Integer ano;
     @ManyToOne//(cascade = CascadeType.ALL)

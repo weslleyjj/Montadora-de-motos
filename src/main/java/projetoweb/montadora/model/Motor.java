@@ -14,7 +14,7 @@ import java.util.List;
 public class Motor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_motor;
+    Long id;
     String cilindrada;
     Integer fabricacao;
     //@OneToMany(cascade = CascadeType.ALL, mappedBy = "motor")

@@ -17,12 +17,12 @@ import java.util.List;
 public class Peca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_peca;
+    Long id;
     String nome;
     String tipo;
     @ManyToMany
     @JoinTable(
-            name = "peca_motor", joinColumns = @JoinColumn(name = "peca_id", referencedColumnName = "id_peca"),
+            name = "peca_motor", joinColumns = @JoinColumn(name = "peca_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "motor_id")
     )
     List<Motor> motor;
