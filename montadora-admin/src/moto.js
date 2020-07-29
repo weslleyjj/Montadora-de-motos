@@ -15,13 +15,13 @@ export const MotoList = props => (
 );
 
 export const MotoEdit = props => (
+
     <Edit {...props}>
+
         <SimpleForm>
             <TextInput disabled source="id" />
             <TextInput source="modelo" />
             <NumberInput source="ano" />
-            <TextInput source="motor" />
-            <TextInput source="registro.id" />
         </SimpleForm>
     </Edit>
 );
