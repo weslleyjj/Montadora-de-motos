@@ -19,5 +19,7 @@ public class Motor {
     Integer fabricacao;
     //@OneToMany(cascade = CascadeType.ALL, mappedBy = "motor")
     //List<Moto>  moto;
-
+    public Long getId(){
+        return id;
+    }
 }

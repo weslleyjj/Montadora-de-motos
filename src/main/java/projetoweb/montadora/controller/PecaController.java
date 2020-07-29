@@ -4,9 +4,12 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import projetoweb.montadora.model.Motor;
 import projetoweb.montadora.model.Peca;
+import projetoweb.montadora.model.PecaMotor;
 import projetoweb.montadora.service.PecaService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,6 +26,23 @@ public class PecaController {
     }
     @GetMapping(path = "/{id}")
     public Peca getOne(@PathVariable Long id){return service.getOne(id);}
+    @GetMapping(path = "/peca-motor")
+    public List<PecaMotor> referencia(){
+        List<PecaMotor> lista = new ArrayList<>();
+        List<Peca> pecas;
+        pecas = listAll();
+        if(pecas != null){
+            for(Peca p : pecas){
+                List<Motor> m1 = p.getMotor();
+                for(Motor m : m1){
+                    lista.add(new PecaMotor(m.getId(), p.getId()));
+                }
+            }
+        }
+        List<List<PecaMotor>> retorno = new ArrayList<>();
+        retorno.add(lista);
+        return lista;
+    }
     @PostMapping
     public Peca insert(@RequestBody Peca p){
         return service.insert(p);

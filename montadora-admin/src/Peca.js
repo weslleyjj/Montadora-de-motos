@@ -1,13 +1,12 @@
 import * as React from "react";
-import { List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, NumberInput, Create} from 'react-admin';
+import {List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Create} from 'react-admin';
 
 export const PecaList = props => (
     <List {...props}>
-        <Datagrid rowClick="edit">
+        <Datagrid>
             <TextField source="id" />
             <TextField source="nome" />
             <TextField source="tipo" />
-            <TextField source="motor" />
             <EditButton/>
         </Datagrid>
     </List>
@@ -19,7 +18,6 @@ export const PecaEdit = props => (
             <TextInput disabled source="id" />
             <TextInput source="nome" />
             <TextInput source="tipo" />
-            <NumberInput source="motor.id" />
         </SimpleForm>
     </Edit>
 );

@@ -27,4 +27,8 @@ public class Peca {
     )
     List<Motor> motor;
 
+    public Long getId(){
+        return id;
+    }
+
 }
