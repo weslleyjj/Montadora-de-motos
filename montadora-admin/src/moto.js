@@ -1,5 +1,5 @@
 import * as React from "react";
-import { List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, NumberInput} from 'react-admin';
+import {List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, NumberInput, Create} from 'react-admin';
 
 export const MotoList = props => (
     <List {...props}>
@@ -21,9 +21,18 @@ export const MotoEdit = props => (
             <TextInput source="modelo" />
             <NumberInput source="ano" />
             <TextInput source="motor" />
-            <NumberInput source="registro.id" />
+            <TextInput source="registro.id" />
         </SimpleForm>
     </Edit>
+);
+
+export const MotoCreate = props => (
+    <Create {...props}>
+        <SimpleForm>
+            <TextInput source="modelo" />
+            <NumberInput source="ano" />
+        </SimpleForm>
+    </Create>
 );
 
 
